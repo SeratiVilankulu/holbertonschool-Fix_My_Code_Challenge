@@ -31,13 +31,13 @@
 # puts result
 result = []
 ARGV.each do |arg|
-  # skip if not an integer
+  # Skip if not an integer
   next if arg !~ /^-?[0-9]+$/
 
-  # convert to integer
+  # Convert to integer
   i_arg = arg.to_i
-  
-  # insert the result at the right position
+
+  # Insert the result at the right position
   is_inserted = false
   i = 0
   l = result.size
@@ -45,12 +45,12 @@ ARGV.each do |arg|
     if result[i] < i_arg
       i += 1
     else
-      result.insert(i, i_arg)  # use i instead of i - 1
+      result.insert(i, i_arg)  # Insert at position i
       is_inserted = true
       break
     end
   end
-  result << i_arg if !is_inserted
+  result << i_arg if !is_inserted  # Append if not inserted earlier
 end
 
 puts result
